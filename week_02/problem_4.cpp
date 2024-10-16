@@ -6,6 +6,14 @@ int main() {
     std::cin >> a;
     //a = std::cin.get();
 
-    std::cout << (int)(a - 'a')<< std::endl;
-    std::cout << "your symbol is: \'" << a << "\'" << std::endl;
+	if( a >= 'a' && a <= 'z') {
+		std::cout << (int)(a - 'a') << std::endl;
+	}
+	else if( a >= 'A' && a <= 'Z') {
+		std::cout << (int)(a - 'A') << std::endl;
+	} else {
+		std::cout << "your symbol is not a letter!!!!" << std::endl;
+	}
+
+	return 0;
 }

@@ -17,6 +17,6 @@ int main() {
 	} else if (c > a && c > b) {
 		std::cout << "c" << std::endl;
 	}
-    
+	
 	return 0;
 }

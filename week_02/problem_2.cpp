@@ -5,8 +5,8 @@ int main() {
 	std::cin >> num;
 	int num_copy = num;
 	
-    int a, b, c, d;
-    // ---------------------------
+	int a, b, c, d;
+	// ---------------------------
 	d = num_copy % 10;
 	num_copy /= 10;
 	c = num_copy % 10;
@@ -15,7 +15,7 @@ int main() {
 	num_copy /= 10;
 	a = num_copy % 10;
 	// std::cout << a << " " << b  << " " << c << " " << d << std::endl;
-    // ---------------------------
+	// ---------------------------
 
 	if (a <= b && b <= c && c <= d) {
 		std::cout << d << c << b << a << std::endl;

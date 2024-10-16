@@ -2,9 +2,9 @@
 
 int main() {
 
-    char a;
-    std::cin >> a;
-    //a = std::cin.get();
+	char a;
+	std::cin >> a;
+	//a = std::cin.get();
 
 	if( a >= 'a' && a <= 'z') {
 		std::cout << (int)(a - 'a') << std::endl;

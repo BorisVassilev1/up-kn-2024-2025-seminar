@@ -8,7 +8,8 @@ int main() {
 	int count[256] = {0};
 
 	for(int i = 0; str[i] != '\0'; ++i) {
-		++count[(unsigned char)str[i]];
+		unsigned char c = str[i];
+		count[c] = count[c] + 1;
 	}
 
 	char mostFrequent = 0;
@@ -17,7 +18,7 @@ int main() {
 			mostFrequent = i;
 	}
 
-	std::cout << char(mostFrequent) << ' ' << count[mostFrequent] << std::endl;
+	std::cout << mostFrequent << ' ' << count[mostFrequent] << std::endl;
 
 	return 0;
 }

@@ -8,6 +8,7 @@ int strlen(char str[]) {
 	return size;
 }
 
+// 1
 void strcpy(char dest[], char src[]) {
 	int len = strlen(src);
 	for (int i = 0; i < len; ++i) {
@@ -16,6 +17,8 @@ void strcpy(char dest[], char src[]) {
 	dest[len] = '\0';
 }
 
+
+// 2 
 //void strcat(char dest[], char src[]) {
 //	int len_dest = strlen(dest);
 //	int len_src	 = strlen(src);
@@ -31,6 +34,8 @@ void strcat(char dest[], char src[]) {
 	strcpy( dest + strlen(dest) , src);
 }
 
+
+// 3
 int strcmp(char a[], char b[]) {
 	int la = strlen(a);
 	int lb = strlen(b);
@@ -51,7 +56,7 @@ int strcmp(char a[], char b[]) {
 	return 0;
 }
 
-
+// 4
 char* strchr(char *str, char c) {
 	
 	int len = strlen(str);
@@ -64,18 +69,64 @@ char* strchr(char *str, char c) {
 	return nullptr;
 }
 
+// 5
+char* strrchr(char* str, char c) {
+	
+	int len = strlen(str);
+	for(int i = len - 1; i >= 0; --i) {
+		if(str[i] == c) {
+			return str + i;
+		}
+	}
+	
+	return nullptr;
+}
+
+// 6
 void printRange(char *begin, char *end) {
 	
 	/*int len = end - begin;
 	for(int i =0; i < len; ++i) {
 		std::cout << begin[i];
 	}*/
-	
+	if(begin >= end) return;
 	while(begin != end) {
 		std::cout << *begin;
 		++begin;
 	}
 }
+
+// 7
+void printFileNameAndExtension(char str[]) {
+	
+	char* slash = std::max(strrchr(str, '/'), strrchr(str, '\\'));
+	if(slash == nullptr) slash = str;
+
+	char *dot = strrchr(str, '.');
+	if(dot == nullptr) {
+		dot = str + strlen(str);
+	}
+
+	std::cout << "File name: ";
+	printRange(slash + 1, dot);
+	std::cout << std::endl << "Extension: ";
+	printRange(dot + 1, str + strlen(str));
+	std::cout << std::endl;
+	
+}
+
+// 8
+void printSuffixesBeginningWith(char str[], char c) {
+
+	char* begin = str;
+	while((begin = strchr(begin, c)) != nullptr) {
+		printRange(begin, str + strlen(str));
+		std::cout << std::endl;
+		++begin;
+	}
+
+}
+
 
 int main() {
 	{
@@ -116,8 +167,22 @@ int main() {
 		char str[100] = "Hello, beautiful world!!!";
 		
 		printRange(strchr(str, 'b'), strchr(str, 'w'));
+		std::cout << std::endl;
 
+	}
 
+	{
+
+		char str[100] = "D:\\Downloads\\windows_file.txt";
+		char str2[100] = "/home/boby/Downloads/linux_file";
+		printFileNameAndExtension(str);
+		printFileNameAndExtension(str2);
+
+	}
+
+	{
+		char str[100] = "Try not. Do, or do not. There is no try.";
+		printSuffixesBeginningWith(str, 'T');
 	}
 
 

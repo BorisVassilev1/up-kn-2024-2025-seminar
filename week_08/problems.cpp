@@ -4,6 +4,13 @@
 #include <iostream>
 #include <cassert>
 
+// 1
+int sumDigits(int n) {
+	if(n == 0) return 0;
+	return n % 10 + sumDigits(n/10);
+}
+
+
 // 2
 int helper_maxDigit(int n, int k) {
 	if (n == 0) return k;
@@ -53,8 +60,18 @@ void sort(int arr[], int n) {
 	sort(arr+1, n-1);
 }
 
+// 7
+bool isPalindrome(int n) {
+	return n == rev(n);
+}
+
 
 int main() {
+	{
+		int n = 1234;
+		std::cout << "sum of digits: " << sumDigits(n) << std::endl;
+	}
+
 	{
 		int n = 1234321;
 		std::cout << "maxDigit: " << maxDigit(n) << std::endl;

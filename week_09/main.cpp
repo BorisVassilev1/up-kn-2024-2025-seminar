@@ -14,5 +14,4 @@ int main() {
 	std::cout << canBeSumOf(8, arr, 5) << std::endl;
 	std::cout << canBeSumOf(9, arr, 5) << std::endl;
 
-
 }

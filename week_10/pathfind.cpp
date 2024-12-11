@@ -42,7 +42,7 @@ int findPathLength_Slow(unsigned int x, unsigned int y, unsigned int destX, unsi
 	return pathLength;
 }
 
-int findPathLength_Slow(unsigned int x, unsigned int y, int destX, int destY, bool map[MAP_SIZE][MAP_SIZE]) {
+int findPathLength_Slow(unsigned int x, unsigned int y, unsigned int destX, unsigned int destY, bool map[MAP_SIZE][MAP_SIZE]) {
 	return findPathLength_Slow(x, y, destX, destY, map, 0);
 }
 
@@ -69,7 +69,7 @@ int findPathLength_Fast(unsigned int x, unsigned int y, unsigned int destX, unsi
 
 int findPathLength_Fast(unsigned int x, unsigned int y, unsigned int destX, unsigned int destY,
 						bool map[MAP_SIZE][MAP_SIZE]) {
-	int distance[MAP_SIZE][MAP_SIZE];
+	int distance[MAP_SIZE][MAP_SIZE] = {0};
 	return findPathLength_Fast(x, y, destX, destY, map, distance, 0);
 }
 

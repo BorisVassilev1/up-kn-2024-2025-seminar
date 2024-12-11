@@ -1,7 +1,7 @@
 #include <iostream>
 #include "bench.hpp"
 
-const int MAX_N = 10000;
+const int MAX_N = 1000000;
 
 void bubbleSort(int arr[], int size) {
 	for (int j = 0; j < size - 1; ++j) {
@@ -76,16 +76,16 @@ int main() {
 	int B[MAX_N];
 	srand(time(0));
 
-	std::cout << "Bubble sort: ";
-	BENCH(
-		{
-			for (int i = 0; i < MAX_N; ++i) {
-				arr[i] = rand() % 1000;
-			}
-			bubbleSort(arr, MAX_N);
-		},
-		10, std::chrono::microseconds);
-	std::cout << std::endl;
+	//std::cout << "Bubble sort: ";
+	//BENCH(
+	//	{
+	//		for (int i = 0; i < MAX_N; ++i) {
+	//			arr[i] = rand() % 1000;
+	//		}
+	//		bubbleSort(arr, MAX_N);
+	//	},
+	//	10, std::chrono::microseconds);
+	//std::cout << std::endl;
 
 	std::cout << "Merge sort: ";
 	BENCH(
@@ -95,7 +95,7 @@ int main() {
 			}
 			mergeSort(arr, B, 0, MAX_N);
 		},
-		10, std::chrono::microseconds);
+		10, std::chrono::milliseconds);
 	std::cout << std::endl;
 
 	std::cout << "Merge sort 2: ";
@@ -106,7 +106,7 @@ int main() {
 			}
 			mergeSort_2(arr, B, 0, MAX_N);
 		},
-		10, std::chrono::microseconds);
+		10, std::chrono::milliseconds);
 	std::cout << std::endl;
 
 	std::cout << "std::sort: ";
@@ -117,7 +117,7 @@ int main() {
 			}
 			std::sort(arr, arr + MAX_N);
 		},
-		10, std::chrono::microseconds);
+		10, std::chrono::milliseconds);
 	std::cout << std::endl;
 
 	// print finally

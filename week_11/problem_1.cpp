@@ -1,5 +1,3 @@
-#include <algorithm>
-#include <atomic>
 #include <cstring>
 #include <iostream>
 
@@ -13,7 +11,7 @@ bool isPrefix(const char* str1, const char* str2) {
 }
 
 // problem 1
-bool isSubstring(char* str1, char* str2) {
+bool isSubstring(const char* str1, const char* str2) {
 	for (int i = 0; str1[i] != '\0'; ++i) {
 		if (isPrefix(&str1[i], str2)) { return true; }
 	}

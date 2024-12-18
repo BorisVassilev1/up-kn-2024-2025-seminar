@@ -5,7 +5,7 @@ bool isdigit(char c) {
 	return false;
 }
 
-void cifri(char *str1, int arr[], int &size) {
+void extractNumbers(char *str1, int arr[], int &size) {
 	int j = 0;
 	for (int i = 0; str1[i] != '\0'; ++i) {
 		if (isdigit(str1[i])) {
@@ -27,7 +27,7 @@ int main() {
 	int	 arr[17];
 	int	 size = 3;
 
-	cifri(str, arr, size);
+	extractNumbers(str, arr, size);
 
 	for (int i = 0; i < size; ++i) {
 		std::cout << arr[i] << ' ';
